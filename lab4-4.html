@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Массивы в JavaScript</title>
+</head>
+<body>
+  <div id="output"></div>
+  <script>
+    // Создаем массивы
+let fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+let citrus = ['orange', 'lemon', 'lime'];
+
+// Получаем доступ к элементу на HTML-странице, где мы будем выводить результаты
+let output = document.getElementById('output');
+
+// Выводим массивы
+output.innerHTML += `<p>${fruits}</p>`; // а) массив fruits;
+output.innerHTML += `<p>${citrus}</p>`; // б) массив citrus;
+
+// Объединяем массивы и выводим результат
+let combined = fruits.concat(citrus);
+output.innerHTML += `<p>${combined}</p>`; // в) объединенный массив fruits;
+
+// Вставляем новые элементы после 'mango' и выводим результат
+fruits.splice(3, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+output.innerHTML += `<p>${fruits}</p>`; // г) массив fruits, в котором после mango вставлены: pear, cherry, plum, raspberry, strawberry;
+
+// Удаляем последние 3 элемента из массива fruits и выводим результат
+fruits.splice(-3, 3);
+output.innerHTML += `<p>${fruits}</p>`; // д) массив fruits, в котором удалены последние 3 элемента;
+
+// Сортируем массив fruits по алфавиту и выводим результат
+fruits.sort();
+output.innerHTML += `<p>${fruits}</p>`; // е) выведите отсортированный в алфавитном порядке массив fruits;
+
+// Сортируем массив fruits в обратном алфавитном порядке и выводим результат
+fruits.reverse();
+output.innerHTML += `<p>${fruits}</p>`; // ж) выведите массив fruits в обратном алфавитном порядке;
+
+// Сортируем массив fruits по длине слов и выводим результат
+fruits.sort(function(a, b) {
+  return a.length - b.length;
+});
+output.innerHTML += `<p>${fruits}</p>`; // з) выведите массив fruits, отсортированный по длине слов.
+
+  </script>
+</body>
+</html>
